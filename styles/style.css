@@ -160,14 +160,14 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 0.9;
-  font-variation-settings: 'wght' var(--regular-weight-accent, 400);
 }
 
 .footer {
-  margin-block-start: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer__button {

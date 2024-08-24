@@ -15,6 +15,8 @@
   --bg-color: #000;
   --accent-color: #00cc14;
   --bg-image: url(../svg/pattern-dark.svg);
+  --bold: 785;
+  --normal: 465;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,14 +27,5 @@
     --bg-image: url(../svg/pattern-dark.svg);
     --bold: 785;
     --normal: 465;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-
-  :root .theme-light {
-    --bg-color: #fff;
-    --accent-color: #000;
-    --bg-image: url(../svg/pattern-light.svg);
   }
 }

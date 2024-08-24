@@ -67,18 +67,22 @@
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
-  transition: border 0.3s ease;
+  transition: outline 0.3s ease;
   inline-size: 39px;
   block-size: 38px;
 }
 
-.card__like-button:focus-visible {
+.primary-button {
+  transition: color 1s ease-in-out;
+}
+
+.primary-button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
   outline: none;
   transition: box-shadow 0.3s ease-out;
 }
 
-.card__like-button::after {
+.primary-button::after {
   content: '';
   position: absolute;
   background-color: var(--accent-color);
@@ -88,42 +92,15 @@
   block-size: 100%;
   inline-size: 100%;
   inset-inline-start: 0;
+  transition: transform 0.3s ease-in;
 }
 
-.card__like-button:hover:after {
+.primary-button:hover:after {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
 
-.card__like-button:hover {
-  color: var(--bg-color);
-  transition: color 1s ease;
-}
-
-.footer__button::after {
-  content: '';
-  position: absolute;
-  background-color: var(--accent-color);
-  transform: scaleX(0);
-  transform-origin: left center;
-  inset-block: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-}
-
-.footer__button:hover:after {
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(1);
-}
-
-.footer__button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--accent-color);
-  outline: none;
-  transition: box-shadow 0.3s ease-out;
-}
-
-.footer__button:hover {
+.primary-button:hover {
   color: var(--bg-color);
   transition: color 1s ease;
 }
