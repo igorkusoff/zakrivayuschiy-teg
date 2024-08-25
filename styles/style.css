@@ -20,12 +20,13 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--normal, 400);
   color: var(--accent-color, #000);
-  background: var(--bg-color, #fff) var(--bg-image) repeat fixed;
-  background-size: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-block: 100px;
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-color: var(--bg-color);
 }
 
 .header {
@@ -42,6 +43,7 @@
   background-color: var(--bg-color);
   inline-size: var(--main-inline-size);
   block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  margin-bottom: 100px;
 }
 
 .logo__group {
@@ -94,7 +96,7 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  margin-block-start: 100px;
+  /* margin-block-start: 100px; */
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color, #fff);
 }
@@ -114,6 +116,36 @@
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
+}
+
+.card__watermark {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  color: inherit;
+  opacity: 0.5;
+  font-family: var(--accent-font), fantasy;
+  font-weight: var(--normal);
+  font-size: 14px;
+  text-transform: uppercase;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  mix-blend-mode: hard-light;
+  text-shadow: 0 0 1px var(--bg-color);
+}
+
+@supports (
+  (text-stroke: 1px var(--bg-color)) or
+    (-webkit-text-stroke: 1px var(--bg-color))
+) {
+
+  .watermark {
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
 }
 
 .card__text {
@@ -160,20 +192,22 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 0.9;
-  font-variation-settings: 'wght' var(--regular-weight-accent, 400);
+  color: var(--text-change-color);
+  mix-blend-mode: difference;
 }
 
 .footer {
-  margin-block-start: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer__button {
   position: relative;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 8px;
   border: 2px solid var(--accent-color);
@@ -183,11 +217,105 @@
   block-size: 55px;
 }
 
+.dialog__button {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  text-transform: uppercase;
+  block-size: 38px;
+}
+
 .floppy {
   position: relative;
   z-index: 1;
   inline-size: 21px;
   block-size: 21px;
+  color: var(--text-change-color);
+  mix-blend-mode: difference;
+}
+
+.floppy-dialog {
+  flex-shrink: 0;
+  align-self: center;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+#save__dialog {
+  margin-inline: 17px;
+  inline-size: 341;
+}
+
+.dialog__form {
+  display: flex;
+}
+
+.button-label {
+  inline-size: 257px;
+}
+
+#save__dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  inline-size: clamp(21.313rem, 21.026rem + 1.221vw, 22.125rem);
+  gap: 30px;
+  border: 2px solid var(--accent-color);
+  padding: 30px;
+  color: var(--accent-color);
+  background: var(--bg-color);
+  margin: auto;
+}
+
+#save__dialog[open]::backdrop {
+  opacity: 0.75;
+  background-color: #000;
+}
+
+.dialog__content {
+  display: flex;
+  /* inline-size: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem); */
+  align-content: center;
+  gap: 20px;
+}
+
+.dialog__text {
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.filter-1 {
+  filter: brightness(120%);
+}
+
+.filter-2 {
+  filter: contrast(90%);
+}
+
+.filter-3 {
+  filter: blur(2px) opacity(0.9);
+}
+
+.filter-4 {
+  filter: grayscale(50%);
+}
+
+.filter-5 {
+  filter: blur(5px) sepia(60%);
+}
+
+.filter-6 {
+  filter: invert(75%);
+}
+
+.filter-7 {
+  filter: saturate(30%);
+}
+
+.filter-8 {
+  filter: hue-rotate(30deg);
 }
 
 @media (width<= 376px) {
@@ -202,5 +330,19 @@
     z-index: 1;
     inline-size: 28px;
     block-size: 28px;
+    color: var(--text-change-color);
+    mix-blend-mode: difference;
+  }
+
+  #save__dialog[open] {
+    padding: 30px 40px;
+  }
+
+  .dialog__button {
+    block-size: 38px;
+  }
+
+  .footer {
+    margin-top: 2px;
   }
 }

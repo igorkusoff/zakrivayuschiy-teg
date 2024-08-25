@@ -1,10 +1,32 @@
 :root {
   --main-font: 'Inter-Variable';
-  --accent-font: 'Press Start 2P';
+  --accent-font: 'PressStart2P';
   --normal: 400;
   --bold: 700;
   --bg-color: #fff;
   --accent-color: #000;
   --main-inline-size: clamp(23.438rem, 16.329rem + 30.329vw, 43.625rem);
   --like-color: #f00;
+  --main-color: #d3d3d3;
+  --first-color: #e7e7e7;
+  --second-color: #1a1a1a;
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      var(--first-color),
+      var(--first-color) 0.01%,
+      var(--second-color)
+    );
+  --text-change-color: #fff;
 }

@@ -8,13 +8,53 @@
 :root .theme-light {
   --bg-color: #fff;
   --accent-color: #000;
-  --bg-image: url(../svg/pattern-light.svg);
+  --main-color: #d3d3d3;
+  --first-color: #e7e7e7;
+  --second-color: #1a1a1a;
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      var(--first-color),
+      var(--first-color) 0.01%,
+      var(--second-color)
+    );
+  --text-change-color: #fff;
 }
 
 :root .theme-dark {
   --bg-color: #000;
   --accent-color: #00cc14;
-  --bg-image: url(../svg/pattern-dark.svg);
+  --main-color: #000;
+  --first-color: #007f0c;
+  --second-color: #004306;
+  --bg-gradient: repeating-linear-gradient(
+      90deg,
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--main-color) 0,
+      var(--main-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(var(--first-color), var(--second-color));
+  --bold: 785;
+  --normal: 465;
+  --text-change-color: #00cc14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,17 +62,25 @@
   :root {
     --bg-color: #000;
     --accent-color: #00cc14;
-    --bg-image: url(../svg/pattern-dark.svg);
+    --main-color: #000;
+    --first-color: #007f0c;
+    --second-color: #004306;
+    --bg-gradient: repeating-linear-gradient(
+        90deg,
+        var(--main-color) 0,
+        var(--main-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        var(--main-color) 0,
+        var(--main-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(var(--first-color), var(--second-color));
     --bold: 785;
     --normal: 465;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-
-  :root .theme-light {
-    --bg-color: #fff;
-    --accent-color: #000;
-    --bg-image: url(../svg/pattern-light.svg);
+    --text-change-color: #00cc14;
   }
 }
