@@ -27,7 +27,7 @@
   background-image: var(--bg-gradient);
   background-size: cover;
   background-color: var(--bg-color);
-  background-attachment:fixed;
+  background-attachment: fixed;
 }
 
 .header {
@@ -142,6 +142,7 @@
   (text-stroke: 1px var(--bg-color)) or
     (-webkit-text-stroke: 1px var(--bg-color))
 ) {
+
   .watermark {
     -webkit-text-stroke: 1px var(--bg-color);
     text-stroke: 1px var(--bg-color);
