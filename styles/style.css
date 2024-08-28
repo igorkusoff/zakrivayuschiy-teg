@@ -27,6 +27,7 @@
   background-image: var(--bg-gradient);
   background-size: cover;
   background-color: var(--bg-color);
+  background-attachment:fixed;
 }
 
 .header {
@@ -42,7 +43,7 @@
   text-transform: uppercase;
   background-color: var(--bg-color);
   inline-size: var(--main-inline-size);
-  block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  /* block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem); */
   margin-bottom: 100px;
 }
 
@@ -107,7 +108,7 @@
   padding-block-start: 4px;
   padding-block-end: 4px;
   font-size: 18px;
-  font-variation-settings: 'wght' var(--bold-weight, 700);
+  font-variation-settings: 'wght' var(--bold);
   inline-size: 100%;
 }
 
@@ -116,6 +117,7 @@
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
+  object-position: center;
 }
 
 .card__watermark {
@@ -140,7 +142,6 @@
   (text-stroke: 1px var(--bg-color)) or
     (-webkit-text-stroke: 1px var(--bg-color))
 ) {
-
   .watermark {
     -webkit-text-stroke: 1px var(--bg-color);
     text-stroke: 1px var(--bg-color);
@@ -164,6 +165,7 @@
   gap: 6px;
   margin: 0 25px 25px 0;
   inline-size: 100%;
+  cursor: pointer;
 }
 
 .card__icon-button {
@@ -172,6 +174,8 @@
   outline: none;
   background-color: transparent;
   block-size: 38px;
+  inline-size: 39px;
+  cursor: pointer;
 }
 
 .like-icon {
@@ -223,6 +227,7 @@
   justify-content: center;
   text-transform: uppercase;
   block-size: 38px;
+  cursor: pointer;
 }
 
 .floppy {
@@ -286,39 +291,39 @@
   text-transform: uppercase;
 }
 
-.filter-1 {
+.filter-brightness {
   filter: brightness(120%);
 }
 
-.filter-2 {
+.filter-contrast {
   filter: contrast(90%);
 }
 
-.filter-3 {
+.filter-blur {
   filter: blur(2px) opacity(0.9);
 }
 
-.filter-4 {
+.filter-grayscale {
   filter: grayscale(50%);
 }
 
-.filter-5 {
+.filter-blur-sepia {
   filter: blur(5px) sepia(60%);
 }
 
-.filter-6 {
+.filter-invert {
   filter: invert(75%);
 }
 
-.filter-7 {
+.filter-saturate {
   filter: saturate(30%);
 }
 
-.filter-8 {
+.filter-hue-rotate {
   filter: hue-rotate(30deg);
 }
 
-@media (width<= 376px) {
+@media (width<= 375px) {
 
   .footer__button {
     flex-direction: column;
@@ -344,5 +349,9 @@
 
   .footer {
     margin-top: 2px;
+  }
+
+  .watermark {
+    inset-inline-end: 13px;
   }
 }

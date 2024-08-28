@@ -14,7 +14,6 @@
 */
 
 @keyframes arrow {
-
   from {
     inset-inline-start: -16px;
   }
@@ -22,6 +21,10 @@
   to {
     inset-inline-start: -12px;
   }
+}
+
+.theme-menu__button {
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -41,14 +44,20 @@
   inset-inline-start: 6px;
 }
 
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+  /* transition: opacity 0.3s ease; */
+}
+
 .theme-menu__button:focus-visible::after {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease;
   transform: scaleX(1);
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  /* transition: opacity 0.3s ease; */
 }
 
 .theme-menu__button:disabled::before {
@@ -58,28 +67,26 @@
   inset-inline-start: -16px;
 }
 
-.theme-menu__button:focus-visible {
-  outline: none;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+.card__icon-button {
+  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
-  transition: outline 0.3s ease;
-  inline-size: 39px;
-  block-size: 38px;
+  /* transition: outline 0.3s ease; */
+  /* inline-size: 39px;
+  block-size: 38px; */
 }
 
-.primary-button {
+/* .primary-button {
   transition: color 1s ease-in-out;
-}
+} */
 
 .primary-button:focus-visible {
   box-shadow: 2px 2px 0 0 var(--accent-color);
   outline: none;
-  transition: box-shadow 0.3s ease-out;
+  transition: box-shadow 0.3s ease;
 }
 
 .primary-button::after {
@@ -92,7 +99,7 @@
   block-size: 100%;
   inline-size: 100%;
   inset-inline-start: 0;
-  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease;
 }
 
 .primary-button:hover:after {
@@ -149,10 +156,17 @@
   transition: fill 0.3s 0.05s linear;
 }
 
+.like-icon .contour {
+  fill: var(--accent-color);
+  transition: fill 0.1s linear;
+}
+
 .like-icon.is-liked .contour {
   fill: var(--like-color);
   transition: fill 0.3s 0.06s linear;
 }
+
+
 
 @keyframes scale-animation {
 
@@ -167,7 +181,7 @@
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: scale-animation 0.3s 0.1s ease-in reverse;
+  animation: scale-animation 0.3s 0.1s ease-in alternate;
 }
 
 @keyframes sparks-animation {
@@ -182,5 +196,5 @@
 }
 
 .like-icon.is-liked .sparks {
-  animation: sparks-animation 0.3s 0.03s ease-in reverse;
+  animation: sparks-animation 0.3s 0.03s ease-in alternate;
 }
